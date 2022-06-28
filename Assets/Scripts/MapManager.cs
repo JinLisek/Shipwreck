@@ -14,6 +14,7 @@ public class MapManager : MonoBehaviour
     private GameObject shipObject;
     private BasicTile[,] tiles;
     private Ship ship;
+    public Ship Ship => ship;
     private Position shipPosition = new Position(x: 0, y: 0);
 
     public void OnNextTurn()
@@ -144,4 +145,5 @@ public class MapManager : MonoBehaviour
             shipObject.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
 
     }
+
 }
