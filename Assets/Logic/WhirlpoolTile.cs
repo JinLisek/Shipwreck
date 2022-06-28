@@ -9,7 +9,7 @@ public class WhirlpoolTile: Tile
 
     public void Enter(Ship ship)
     {
-        ship.Rotate();
+        ship.Rotate(turnType: TurnType.Uturn);
     }
 
     public void Leave()

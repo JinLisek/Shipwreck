@@ -14,6 +14,11 @@ public class TurnManager
     {
         ship.Sail();
     }
+
+    public void TurnShip(TurnType turnType)
+    {
+        ship.Rotate(turnType: turnType);
+    }
 }
 
 }

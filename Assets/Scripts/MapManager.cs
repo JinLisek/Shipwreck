@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using Logic;
@@ -21,6 +19,11 @@ public class MapManager : MonoBehaviour
     public void OnNextTurn()
     {
         turnManager.TriggerNextTurn();
+    }
+
+    public void TurnShip(TurnType turnType)
+    {
+        turnManager.TurnShip(turnType: turnType);
     }
 
     private void Start()
@@ -132,13 +135,13 @@ public class MapManager : MonoBehaviour
     private void RotateShipInDirection(Direction direction)
     {
         if(direction == Direction.North)
-            shipObject.transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
+            shipObject.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
         else if(direction == Direction.East)
-            shipObject.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
+            shipObject.transform.rotation = Quaternion.AngleAxis(270, Vector3.forward);
         else if(direction == Direction.South)
-            shipObject.transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+            shipObject.transform.rotation = Quaternion.AngleAxis(180, Vector3.forward);
         else
-            shipObject.transform.rotation = Quaternion.AngleAxis(270, Vector3.up);
+            shipObject.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
 
     }
 }

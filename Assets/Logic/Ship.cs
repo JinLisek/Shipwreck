@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Logic
 {
@@ -12,6 +11,7 @@ public class Ship
     private int speed;
     private OnMoveCallback onMove;
     private OnRotateCallback onRotate;
+    private DirectionRotator rotator = new DirectionRotator();
 
     public Ship(Direction direction)
     {
@@ -29,16 +29,9 @@ public class Ship
         }
     }
 
-    public void Rotate()
+    public void Rotate(TurnType turnType)
     {
-        if(direction == Direction.North)
-            direction = Direction.South;
-        else if(direction == Direction.South)
-            direction = Direction.North;
-        else if(direction == Direction.West)
-            direction = Direction.East;
-        else
-            direction = Direction.West;
+        direction = rotator.Rotate(direction: direction, turnType: turnType);
 
         OnRotateCallback onRotate = this.onRotate;
         if(onRotate != null)
