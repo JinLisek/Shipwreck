@@ -23,7 +23,7 @@ public class Energy
         this.currentEnergy = maxEnergy;
     }
 
-    public void Refill()
+    public void ResetCurrent()
     {
         currentEnergy = maxEnergy;
         onCurrentEnergyChange(currentEnergy);

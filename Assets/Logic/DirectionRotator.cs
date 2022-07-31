@@ -33,6 +33,10 @@ public class DirectionRotator
         {
             directionNode = CircularLinkedListExtensions.Next(directionNode);
         }
+        else if(turnType == TurnType.HalfLeft)
+        {
+            directionNode = CircularLinkedListExtensions.Previous(directionNode);
+        }
 
         return directionNode.Value;
     }
